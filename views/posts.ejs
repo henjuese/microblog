@@ -1,0 +1,21 @@
+
+
+<%posts.forEach(function(post,index){
+	%>
+		<div class="col-md-4">
+			<h2><a href="/u/<%= post.user %>"><%= post.user %></a> 说</h2> 
+			<p><small><%= post.time %></small></p> 
+			<p><%= post.post %></p>
+			<%
+               if(user){
+               		if(user.name==post.user){
+               			%>
+               				<a href='/del/<%= post.post %>'>删除</a>
+               			<%
+               		}
+               }
+			%>
+			
+		</div>
+	<%
+})%>
